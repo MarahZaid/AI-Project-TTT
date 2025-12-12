@@ -1,0 +1,172 @@
+:root{
+  --glass-bg: rgba(255,255,255,0.06);
+  --accent1: #6a11cb;
+  --accent2: #2575fc;
+}
+
+/* page background gradient */
+.bg-gradient {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(97,73,255,0.95) 0%, rgba(37,117,252,0.95) 100%);
+  display: block;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* glass card */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* board styles */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 10px;
+  justify-content: center;
+}
+
+@media (min-width: 768px){
+  .board-grid { grid-template-columns: repeat(3, 100px); }
+}
+
+.board-cell {
+  width: 90px;
+  height: 90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.1rem;
+  font-weight:700;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  user-select: none;
+}
+
+.board-cell:active { transform: translateY(2px); }
+.board-cell:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+
+/* larger cells on bigger screens */
+@media (min-width: 768px){
+  .board-cell { width:100px; height:100px; font-size:2.4rem; }
+}
+
+/* highlight winning cells */
+.cell-win {
+  background: linear-gradient(90deg, rgba(255,230,128,0.12), rgba(255,200,100,0.08));
+  box-shadow: 0 8px 30px rgba(255,200,60,0.08);
+}
+
+/* navbar override */
+.navbar { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.04); }
+
+/* small touches */
+#aiDecision { min-height: 48px; display:flex; align-items:center; }
+.list-group-item { background: transparent; border: none; border-bottom: 1px dashed rgba(255,255,255,0.03); color: #eef; }
+
+/* ===== Global Background ===== */
+body {
+  background: linear-gradient(135deg, #e9efff 0%, #ffffff 100%);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+
+/* ===== Cards (white-shaded, very clear) ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #4a63ff !important;
+  color: white;
+}
+
+.navbar-brand,
+#topStatus {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* ===== Game Board ===== */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.board-cell {
+  width: 110px;
+  height: 110px;
+  background: #f7f7f7;
+  border: 2px solid #cccccc;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222;
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.board-cell:hover {
+  background: #ffffff;
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+.board-cell:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+/* Winning highlight */
+.cell-win {
+  background: #ffe9a8 !important;
+  border-color: #e5c03d !important;
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.5);
+}
+
+/* ===== AI Decision box ===== */
+#aiDecision {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+/* ===== Evaluation list ===== */
+.list-group-item {
+  background: #fff !important;
+  color: #444 !important;
+  border: 1px solid #eee !important;
+  margin-bottom: 4px;
+  border-radius: 6px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  font-weight: 600;
+}
+
+#resetBtn {
+  color: white;
+}
+
